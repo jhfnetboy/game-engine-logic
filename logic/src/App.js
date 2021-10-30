@@ -1,22 +1,13 @@
-import logo from './logo.svg';
+import TypedReactHooksDemo from "./components/typer"
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <span id="react-root" className="text-white ml-40 mr-40 text-xl font-bold border-8 border-white">
+      <TypedReactHooksDemo />
+      </span>
       </header>
     </div>
   );
