@@ -43,17 +43,31 @@ const TypedReactHooksDemo = () => {
     }
   }, [])
   
-  const componentDidMount= ()=> {
-    window.addEventListener("keydown", handleKeyPress);
-  }
-  const componentWillUnmount=()=> {
-    window.removeEventListener("keydown", handleKeyPress);
-  }
+//   const componentDidMount= ()=> {
+//     window.addEventListener("keydown", handleKeyPress);
+//   }
+//   const componentWillUnmount=()=> {
+//     window.removeEventListener("keydown", handleKeyPress);
+//   }
   const handleKeyPress = (event) => {
     setLastPressedKey(event.key);
-    console.log("Press key",event.key)
-    console.log("Press keyTrue",event.code)
-    console.log("Press keyCode",event.keyCode)
+    // console.log("Press key",event.key)
+    // console.log("Press keyTrue",event.code)
+    // console.log("Press keyCode",event.keyCode)
+    // console.log((event.key).toString())
+    switch ((event.key).toString()) {
+        case "a":
+            console.log("i am a touched")
+            break;
+        case "b":
+            console.log("i am b touched")
+            break;
+        case "c":
+            console.log("i am c touched")
+            break;
+        default :
+            console.log("")                                      
+    }  
   };
   
   function nextStr(){
@@ -68,7 +82,7 @@ const TypedReactHooksDemo = () => {
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} ref={el} />
       </div>
-      <button onClick={nextStr()}>get data</button><br />
+      {/* <button onClick={nextStr()}>get data</button><br /> */}
       <button onClick={() => typed.current.toggle()}>Toggle</button>
       <button onClick={() => typed.current.start()}>Start</button>
       <button onClick={() => typed.current.stop()}>Stop</button>
